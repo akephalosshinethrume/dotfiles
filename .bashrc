@@ -74,8 +74,6 @@ if [ -f ~/.system_aliases ]; then
     . ~/.system_aliases
 fi
 
-export EDITOR="vim" # default to Vim
-
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH" # ~/bin and ~/.local/bin in path
 
 source ~/bin/set-prompt.sh
@@ -89,13 +87,4 @@ if [ "$OSTYPE" = "msys" ]; then
     alias python='winpty python.exe'
     alias py='winpty py.exe'
     alias php='winpty php.exe'
-elif [ "$OSTYPE" = "darwin20" ]; then
-    # Mac OSX
-    export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
 fi
-
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
